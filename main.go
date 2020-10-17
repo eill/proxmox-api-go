@@ -9,7 +9,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/Telmate/proxmox-api-go/proxmox"
+	"github.com/eill/proxmox-api-go/proxmox"
 )
 
 func main() {
@@ -232,7 +232,7 @@ func main() {
 			fmt.Printf("Missing target node\n")
 			os.Exit(1)
 		}
-		_, err := c.MigrateNode(vmr, args[1], true)
+		_, err := c.MigrateNode(vmr, args[1], true, true)
 
 		if err != nil {
 			log.Printf("Error to move %+v\n", err)
